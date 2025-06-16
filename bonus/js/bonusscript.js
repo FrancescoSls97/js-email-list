@@ -1,22 +1,20 @@
 console.log("hello");
-
-// selezione elementi della DOM
+let listEl = document.querySelectorAll(".list-group-item");
+const mailGenEl = document.getElementById("mail-generated");
 const btnEl = document.getElementById("button");
-const listEl = document.getElementById("list");
+const reGenEl = document.getElementById("regen");
 
-//creazione evento per il click
-
+// aggiungere evento al click
 btnEl.addEventListener("click", function () {
-  console.log("Hai cliccato");
-  // utilizzo di fetch per recuperare dati da un API
+  mailGenEl.classList.toggle("d-none");
   for (let i = 0; i < 10; i++) {
+    // utilizzo di fetch per recuperare dati da un API
     fetch("https://flynn.boolean.careers/exercises/api/random/mail")
       .then((Response) => Response.json())
       .then((data) => {
         // lod del risultato
         console.log(data.response);
-        /* document.writeln(data.response); */
-        const listEl = document.getElementById("list");
+        listEl[i].innerText = data.response;
       });
   }
 });
