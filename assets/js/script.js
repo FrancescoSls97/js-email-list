@@ -7,5 +7,6 @@ for (let i = 0; i < 10; i++) {
     .then((data) => {
       // lod del risultato
       console.log(data);
+      document.writeln(data.response);
     });
 }
