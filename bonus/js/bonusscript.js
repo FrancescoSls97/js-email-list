@@ -15,6 +15,8 @@ btnEl.addEventListener("click", function () {
         // lod del risultato
         console.log(data.response);
         listEl[i].innerText = data.response;
+        reGenEl.innerText =
+          "Servono altre mail? Premi di nuovo il bottone verde";
       });
   }
 });
